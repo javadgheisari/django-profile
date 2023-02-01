@@ -1,7 +1,27 @@
 from django.shortcuts import render
+from django.views import View
+from .models import Blog
 
-from django.http import HttpResponse
+class MeView(View):
+    template_name = 'me.html'
+
+    def get(self, request):
+        return render(request, self.template_name)
 
 
-def index(request):
-    return HttpResponse("Hello, world. You're at the me index.")
+class BlogView(View):
+    template_name = 'blog.html'
+
+    def get(self, request):
+        blogs = Blog.objects.all()
+
+        return render(request, self.template_name, {'blogs': blogs})
+
+
+class ArticleٰView(View):
+    template_name = 'article.html'
+
+    def get(self, request, article_id):
+        article = Blog.objects.get(id=article_id)
+
+        return render(request, self.template_name, {'article': article})

@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div class="py-5 text-center">
+        <h3 class="pt-5 pb-3 text-light">Javad Gheisari</h3>
+        <div>
+            <p class='px-5 text-muted'>An ambitious solver of problems from Tehran-Iran.</p>
+            <p class='px-5 text-muted'>Focused on Backend Development with Django. Interested in blockchain & AI.
+            <br>
+            Python is my favorite language and I believe that every task can be done with Python :)
+            </p>
+            <nav class="text-light">
+                <a class="text-info text-decoration-none" href="https://linkedin.com/in/mmdaminrasouli">LinkedIn</a> -
+                <a class="text-info text-decoration-none" href="https://t.me/AminDev">Telegram</a> -
+                <a class="text-info text-decoration-none" href="https://twitter.com/mmdamin_me">Twitter</a> -
+                <a class="text-info text-decoration-none" href="https://github.com/aminrasouli">GitHub</a><br>
+            </nav>
+            <nav class="pt-2 text-light">
+                <a class="text-warning text-decoration-none" href="https://github.com/aminrasouli">Resume</a> - 
+                <a class="text-primary text-decoration-none" href="{% url 'blog' %}">Blog</a>
+            </nav>
+        </div>
+    </div>
+
+{% endblock %}

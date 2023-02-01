@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div class="text-light container">
+        <div class="text-center mt-5">
+            <a class="text-decoration-none text-info" href="{% url 'me' %}">خانه</a>
+        </div>
+        <div class="p-5" dir="rtl" lang="ar">
+            <div class="row">
+                {% for blog in blogs %}
+                    <div class="p-5">
+                        <h3>{{blog.title}}</h3>
+                        <div class="row">
+                            <p class="text-muted mb-2">{{blog.description|slice:":60"}}</p>
+                            <a class="btn btn-success btn-sm w-25 ms-auto mx-4" href="{% url 'article' blog.id%}">ادامه</a>
+                            <hr class="mt-4"></hr>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+{% endblock %}

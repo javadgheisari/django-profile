@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div class="p-5 container" dir="rtl" lang="ar">
+        <div class="text-light pt-5">
+            <div>
+              <h3 class="my-4 mx-2 d-inline">{{article.title}}</h3>
+              <hr class="w-75">
+            </div>
+            <div class="p-4 row">
+                <p>{{article.description}}|linebreaks</p>
+            </div>
+            <hr>
+            {% comment %} <nav class="navbar navbar-expand-lg navbar-light bg-light" dir="ltr">
+                <a class="navbar-brand" href="#">Navbar w/ text</a>
+                <div class="collapse navbar-collapse" id="navbarText">
+                  <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active">
+                      <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="#">Features</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="#">Pricing</a>
+                    </li>
+                  </ul>
+                  <span class="navbar-text" style="padding-left: 300px;">
+                    Navbar text with an inline element
+                  </span>
+                </div>
+              </nav>          {% endcomment %}
+            <p class="mx-3 text-center" dir="ltr"><span class="ms-2">{{article.updated|date}}</span>:تاریخ</p>
+            {% comment %} <a>home</a> {% endcomment %}
+        </div>
+        <div class="text-center mt-2 text-light">
+          <a class="text-decoration-none text-info" href="{% url 'me' %}">خانه</a> - 
+          <a class="text-decoration-none text-warning" href="{% url 'blog' %}">بازگشت</a>
+        </div>
+    </div>
+{% endblock %}
