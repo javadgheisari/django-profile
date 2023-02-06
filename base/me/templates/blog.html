@@ -1,9 +1,15 @@
 {% extends 'base.html' %}
+{% load static %}
 
 {% block content %}
     <div class="text-light container">
         <div class="text-center mt-5">
-            <a class="text-decoration-none text-info" href="{% url 'me' %}">خانه</a>
+            <a class="text-decoration-none text-light" href="{% url 'me' %}">   
+                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-house-fill" viewBox="0 0 16 16">
+                    <path d="M8.707 1.5a1 1 0 0 0-1.414 0L.646 8.146a.5.5 0 0 0 .708.708L8 2.207l6.646 6.647a.5.5 0 0 0 .708-.708L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.707 1.5Z"/>
+                    <path d="m8 3.293 6 6V13.5a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 13.5V9.293l6-6Z"/>
+                </svg>
+            </a>
         </div>
         <div class="p-5" dir="rtl" lang="ar">
             <div class="row">
@@ -11,7 +17,7 @@
                     <div class="p-5">
                         <h3>{{blog.title}}</h3>
                         <div class="row">
-                            <p class="text-muted mb-2">{{blog.description|slice:":60"}}</p>
+                            <p class="text-muted mb-2" style="width: 400px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis">{{blog.description|slice:":60"}}</p>
                             <a class="btn btn-success btn-sm w-25 ms-auto mx-4" href="{% url 'article' blog.id%}">ادامه</a>
                             <hr class="mt-4"></hr>
                         </div>

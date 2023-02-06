@@ -9,6 +9,13 @@ class MeView(View):
         return render(request, self.template_name)
 
 
+# class ResumeView(View):
+#     template_name = 'resume.html'
+
+#     def get(self, request):
+#         return render(request, self.template_name)
+
+
 class BlogView(View):
     template_name = 'blog.html'
 
