@@ -1,16 +1,25 @@
 {% extends 'base.html' %}
 
 {% block content %}
-    <div class="p-5 container" dir="rtl" lang="ar">
+    <div class="p-5 container">
         <div class="text-light pt-5">
             <div>
-              <h3 class="my-4 mx-2 d-inline">{{article.title}}</h3>
-              <hr class="w-75">
+              <h3 class="my-4 mx-2"><strong>{{article.title|wordwrap:60|linebreaks}}</strong></h3>
+              <hr class="w-100">
             </div>
-            <div class="p-4 row">
-                <p>{{article.description}}|linebreaks</p>
+            <div class="p-4 row lead">
+              <figure>
+                <blockquote class="blockquote">
+                  <p>{{article.description|linebreaks}}</p>
+                </blockquote>
+                {% if article.url%}
+                  <figcaption class="blockquote-footer mt-2">
+                    <strong>complete read in <a class="text-decoration-none text-success" href="{{article.url}}" target="_blank"><cite title="Source Title">Source Title</cite></a></strong>
+                  </figcaption>
+                {% endif %}
+              </figure>
             </div>
-            <hr>
+            <hr class="w-50" style="margin: 0 auto;">
             {% comment %} <nav class="navbar navbar-expand-lg navbar-light bg-light" dir="ltr">
                 <a class="navbar-brand" href="#">Navbar w/ text</a>
                 <div class="collapse navbar-collapse" id="navbarText">
@@ -30,21 +39,21 @@
                   </span>
                 </div>
               </nav>          {% endcomment %}
-            <p class="mx-3 text-center text-muted" dir="ltr"><span class="ms-2">{{article.updated|date}}</span>:تاریخ</p>
+            <p class="mx-3 mt-3 text-center text-muted">date:<span class="ms-2">{{article.updated|date}}</span></p>
             {% comment %} <a>home</a> {% endcomment %}
         </div>
         <div class="text-center mt-2 text-light">
+          <a class="text-decoration-none text-danger mx-1" href="{% url 'blog' %}">
+            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="currentColor" class="bi bi-arrow-bar-left" viewBox="0 0 16 16">
+              <path fill-rule="evenodd" d="M12.5 15a.5.5 0 0 1-.5-.5v-13a.5.5 0 0 1 1 0v13a.5.5 0 0 1-.5.5ZM10 8a.5.5 0 0 1-.5.5H3.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L3.707 7.5H9.5a.5.5 0 0 1 .5.5Z"/>
+            </svg>          
+          </a>
           <a class="text-decoration-none text-success mx-1" href="{% url 'me' %}">
             <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="currentColor" class="bi bi-house-fill" viewBox="0 0 16 16">
               <path d="M8.707 1.5a1 1 0 0 0-1.414 0L.646 8.146a.5.5 0 0 0 .708.708L8 2.207l6.646 6.647a.5.5 0 0 0 .708-.708L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.707 1.5Z"/>
               <path d="m8 3.293 6 6V13.5a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 13.5V9.293l6-6Z"/>
             </svg>
           </a> 
-          <a class="text-decoration-none text-danger mx-1" href="{% url 'blog' %}">
-            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="currentColor" class="bi bi-arrow-bar-left" viewBox="0 0 16 16">
-              <path fill-rule="evenodd" d="M12.5 15a.5.5 0 0 1-.5-.5v-13a.5.5 0 0 1 1 0v13a.5.5 0 0 1-.5.5ZM10 8a.5.5 0 0 1-.5.5H3.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L3.707 7.5H9.5a.5.5 0 0 1 .5.5Z"/>
-            </svg>          
-          </a>
         </div>
     </div>
 {% endblock %}
