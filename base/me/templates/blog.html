@@ -17,7 +17,7 @@
                     <div class="pt-5">
                         <h3>{{blog.title|wordwrap:40|linebreaks}}</h3>
                         <div class="row">
-                            <p class="text-muted mb-2 col-md-6" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis">{{blog.description|slice:"80"}}</p>
+                            <p class="text-muted mb-2 col-md-6" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis">{{blog.description.plain|slice:"100"}}</p>
                             <a class="btn btn-success btn-sm w-25 ms-auto mx-4 col-md-6" href="{% url 'article' blog.id%}">continue</a>
                             <hr class="mt-4"></hr>
                         </div>

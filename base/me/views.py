@@ -21,6 +21,9 @@ class BlogView(View):
 
     def get(self, request):
         blogs = Blog.objects.all()
+        # for blog in blogs:
+        #     blog.description = blog.description_content()
+        #     blog.save()
 
         return render(request, self.template_name, {'blogs': blogs})
 
