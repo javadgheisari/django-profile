@@ -11,10 +11,10 @@
                 </svg>
             </a>
         </div>
-        <div class="p-5">
+        <div class="mt-5">
             <div class="row">
                 {% for blog in blogs %}
-                    <div class="p-5">
+                    <div class="pt-5">
                         <h3>{{blog.title|wordwrap:40|linebreaks}}</h3>
                         <div class="row">
                             <p class="text-muted mb-2 col-md-6" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis">{{blog.description|slice:"80"}}</p>
