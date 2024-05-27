@@ -1,6 +1,8 @@
 from django.shortcuts import render
 from django.views import View
-from .models import Blog
+from django.views.generic import ListView
+from django.core.paginator import Paginator
+from .models import Blog, Keyword
 
 class MeView(View):
     template_name = 'me.html'
@@ -16,16 +18,28 @@ class MeView(View):
 #         return render(request, self.template_name)
 
 
-class BlogView(View):
+class BlogView(ListView):
     template_name = 'blog.html'
+    items_per_page = 10
+    model = Blog
 
-    def get(self, request):
-        blogs = Blog.objects.all()
+    def get(self, request, keyword=None):
+        blogs = Blog.objects.all().order_by('-created')
+        keywords = Keyword.objects.all()
+
+        keyword_filter = False
+        if keyword:
+            blogs = blogs.filter(keywords__name=keyword)
+            keyword_filter = True
+
+        paginator = Paginator(blogs, self.items_per_page)
+        page_number = request.GET.get('page')
+        page_objs = paginator.get_page(page_number)
         # for blog in blogs:
         #     blog.description = blog.description_content()
         #     blog.save()
 
-        return render(request, self.template_name, {'blogs': blogs})
+        return render(request, self.template_name, {'blogs': page_objs, 'keywords':keywords, 'keyword_filter':keyword_filter})
 
 
 class ArticleٰView(View):
