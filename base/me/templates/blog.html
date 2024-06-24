@@ -33,7 +33,11 @@
             </button>
             <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                 {% for keyword in keywords %}
-                    <li><a class="dropdown-item" href="{% url 'blog_with_keyword' keyword.name %}">{{ keyword.name }}</a></li>
+                    {% if keyword_filter and keyword.name == keyword_name %}
+                        <li><a class="dropdown-item disabled text-success" href="{% url 'blog_with_keyword' keyword.name %}" aria-current="true">{{ keyword.name }}</a></li>
+                    {% else %}
+                        <li><a class="dropdown-item" href="{% url 'blog_with_keyword' keyword.name %}">{{ keyword.name }}</a></li>
+                    {% endif %}
                 {% endfor %}
             </ul>
         </div>

@@ -39,7 +39,7 @@ class BlogView(ListView):
         #     blog.description = blog.description_content()
         #     blog.save()
 
-        return render(request, self.template_name, {'blogs': page_objs, 'keywords':keywords, 'keyword_filter':keyword_filter})
+        return render(request, self.template_name, {'blogs': page_objs, 'keywords':keywords, 'keyword_filter':keyword_filter, 'keyword_name': keyword})
 
 
 class ArticleٰView(View):
