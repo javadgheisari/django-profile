@@ -67,7 +67,10 @@
                     <div class="card-body">
                       <h5 class="card-title">{{blog.title}}</h5>
                       <p class="card-text text-muted" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis">{{blog.description.plain|slice:"60"}}</p>
-                      <a href="{% url 'article' blog.id%}" class="mx-auto btn btn-success text-end">continue</a>
+                      <div>
+                        <small class="text-muted mx-2">{{blog.created|date}}</small>
+                        <a href="{% url 'article' blog.id%}" class="mx-auto btn btn-success float-end" style="width: 8rem;">continue</a>
+                      </div>
                     </div>
                   </div>
                 </div>
