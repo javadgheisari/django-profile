@@ -29,7 +29,11 @@
         </div>
         <div class="dropdown">
             <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
-                Keywords
+                {% if keyword_filter %}
+                    Keywords ({{keyword_name}})
+                {% else %}
+                    Keywords
+                {% endif %}
             </button>
             <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                 {% for keyword in keywords %}
@@ -43,7 +47,7 @@
         </div>
 
         <div class="mt-5">
-            <div class="row">
+            {% comment %} <div class="row">
                 {% for blog in blogs %}
                     <div class="m-3">
                         <h3>{{blog.title|wordwrap:40|linebreaks}}</h3>
@@ -53,6 +57,20 @@
                             <hr class="mt-4"></hr>
                         </div>
                     </div>
+                {% endfor %}
+            </div> {% endcomment %}
+
+            <div class="row">
+                {% for blog in blogs %}
+                <div class="col-sm-6 p-4">
+                  <div class="card bg-dark border-secondary">
+                    <div class="card-body">
+                      <h5 class="card-title">{{blog.title}}</h5>
+                      <p class="card-text text-muted" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis">{{blog.description.plain|slice:"60"}}</p>
+                      <a href="{% url 'article' blog.id%}" class="mx-auto btn btn-success text-end">continue</a>
+                    </div>
+                  </div>
+                </div>
                 {% endfor %}
             </div>
         </div>
