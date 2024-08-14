@@ -29,11 +29,7 @@
         </div>
         <div class="dropdown">
             <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
-                {% if keyword_filter %}
-                    Keywords ({{keyword_name}})
-                {% else %}
-                    Keywords
-                {% endif %}
+                Keywords
             </button>
             <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                 {% for keyword in keywords %}
