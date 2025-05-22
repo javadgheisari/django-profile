@@ -34,7 +34,7 @@
             <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                 {% for keyword in keywords %}
                     {% if keyword_filter and keyword.name == keyword_name %}
-                        <li><a class="dropdown-item disabled text-success" href="{% url 'blog_with_keyword' keyword.name %}" aria-current="true">{{ keyword.name }}</a></li>
+                        <li><a style="color: #37827b;" class="dropdown-item disabled" href="{% url 'blog_with_keyword' keyword.name %}" aria-current="true">{{ keyword.name }}</a></li>
                     {% else %}
                         <li><a class="dropdown-item" href="{% url 'blog_with_keyword' keyword.name %}">{{ keyword.name }}</a></li>
                     {% endif %}
@@ -65,7 +65,7 @@
                       <p class="card-text text-muted" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis">{{blog.description.plain|slice:"60"}}</p>
                       <div>
                         <small class="text-muted mx-2">{{blog.created|date}}</small>
-                        <a href="{% url 'article' blog.id%}" class="mx-auto btn btn-success float-end" style="width: 8rem;">continue</a>
+                        <a style="background: #37827b;" href="{% url 'article' blog.id%}" class="mx-auto btn btn-success float-end" style="width: 9rem;">continue</a>
                       </div>
                     </div>
                   </div>
@@ -83,7 +83,7 @@
         
                 {% for page_number in blogs.paginator.page_range %}
                     {% if blogs.number == page_number %}
-                        <button class="btn btn-outline-success active">
+                        <button style="background: #37827b;" class="btn btn-outline-success active">
                             <span>{{ page_number }} <span class="sr-only"></span></span>
                         </button>
                     {% else %}

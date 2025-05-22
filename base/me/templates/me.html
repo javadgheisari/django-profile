@@ -8,9 +8,9 @@
 {% block content %}
 
     <nav class="pt-5 px-4 text-light">
-        <a class="text-warning text-decoration-none lead" href="https://drive.google.com/file/d/15meYgG0jVBBUm5YbNJUL8VEkT7UOJF6v/view?usp=sharing" target="_blank">Resume</a>
-        <span> / </span>
-        <a class="text-warning text-decoration-none lead" href="{% url 'blog' %}">Blog</a>
+        <a style="color: #4DB6AC;" class="text-decoration-none lead" href="https://drive.google.com/file/d/15meYgG0jVBBUm5YbNJUL8VEkT7UOJF6v/view?usp=sharing" target="_blank">Resume</a>
+        <span> - </span>
+        <a style="color: #4DB6AC;" class="text-decoration-none lead" href="{% url 'blog' %}">Blog</a>
     </nav>
     <!-- <hr class="text-light w-25"> -->
 
@@ -27,8 +27,90 @@
             Python is my favorite language and I believe that every task can be done with Python :)
             </p>
 
-            <img class="p-5 img-fluid" src="{% static 'pics/undraw_programming_re_kg9v.svg' %}" alt="Responsive image" width="370" height="250">
+            {% comment %} <img class="p-5 img-fluid" src="{% static 'pics/undraw_programming_re_kg9v.svg' %}" alt="Responsive image" width="370" height="250"> {% endcomment %}
         </div>
+
+        <div class="app">
+            <div class="tag-list">
+              <div class="loop-slider" style="--duration:15951ms; --direction:normal;">
+                <div class="inner">
+                  <div class="tag"><span>#</span> Python</div>
+                  <div class="tag"><span>#</span> Kafka</div>
+                  <div class="tag"><span>#</span> Docker</div>
+                  <div class="tag"><span>#</span> Minio</div>
+                  <div class="tag"><span>#</span> Flask
+                </div>
+                  <!-- duplicated content -->
+                  <div class="tag"><span>#</span> Python</div>
+                  <div class="tag"><span>#</span> Kafka</div>
+                  <div class="tag"><span>#</span> Docker</div>
+                  <div class="tag"><span>#</span> Minio</div>
+                  <div class="tag"><span>#</span> Flask</div>
+                </div>
+              </div>
+              <div class="loop-slider" style="--duration:19260ms; --direction:reverse;">
+                <div class="inner">
+                  <div class="tag"><span>#</span> Celery</div>
+                  <div class="tag"><span>#</span> Postgresql</div>
+                  <div class="tag"><span>#</span> Django</div>
+                  <div class="tag"><span>#</span> Mongodb</div>
+                  <div class="tag"><span>#</span> Redis</div>
+                  <!-- duplicated content -->
+                  <div class="tag"><span>#</span> Celery</div>
+                  <div class="tag"><span>#</span> Postgresql</div>
+                  <div class="tag"><span>#</span> Django</div>
+                  <div class="tag"><span>#</span> Mongodb</div>
+                  <div class="tag"><span>#</span> Redis</div>
+                </div>
+              </div>
+              <div class="loop-slider" style="--duration:10449ms; --direction:normal;">
+                <div class="inner">
+                  <div class="tag"><span>#</span> Elastic</div>
+                  <div class="tag"><span>#</span> Fastapi</div>
+                  <div class="tag"><span>#</span> Golang</div>
+                  <div class="tag"><span>#</span> Rabbitmq</div>
+                  <div class="tag"><span>#</span> Neo4j</div>
+                  <!-- duplicated content -->
+                  <div class="tag"><span>#</span> Elastic</div>
+                  <div class="tag"><span>#</span> Fastapi</div>
+                  <div class="tag"><span>#</span> Golang</div>
+                  <div class="tag"><span>#</span> Rabbitmq</div>
+                  <div class="tag"><span>#</span> Neo4j</div>
+                </div>
+              </div>
+              {% comment %} <div class="loop-slider" style="--duration:16638ms; --direction:reverse;">
+                <div class="inner">
+                  <div class="tag"><span>#</span> Gatsby</div>
+                  <div class="tag"><span>#</span> HTML</div>
+                  <div class="tag"><span>#</span> CSS</div>
+                  <div class="tag"><span>#</span> React</div>
+                  <div class="tag"><span>#</span> Next.js</div>
+                  <!-- duplicated content -->
+                  <div class="tag"><span>#</span> Gatsby</div>
+                  <div class="tag"><span>#</span> HTML</div>
+                  <div class="tag"><span>#</span> CSS</div>
+                  <div class="tag"><span>#</span> React</div>
+                  <div class="tag"><span>#</span> Next.js</div>
+                </div>
+              </div>
+              <div class="loop-slider" style="--duration:15936ms; --direction:normal;">
+                <div class="inner">
+                  <div class="tag"><span>#</span> Next.js</div>
+                  <div class="tag"><span>#</span> React</div>
+                  <div class="tag"><span>#</span> webdev</div>
+                  <div class="tag"><span>#</span> Typescript</div>
+                  <div class="tag"><span>#</span> Gatsby</div>
+                  <!-- duplicated content -->
+                  <div class="tag"><span>#</span> Next.js</div>
+                  <div class="tag"><span>#</span> React</div>
+                  <div class="tag"><span>#</span> webdev</div>
+                  <div class="tag"><span>#</span> Typescript</div>
+                  <div class="tag"><span>#</span> Gatsby</div>
+                </div>
+              </div> {% endcomment %}
+              <div class="fade"></div>
+            </div>
+          </div>
     </div>
 {% endblock %}
 
