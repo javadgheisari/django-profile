@@ -8,9 +8,18 @@
 {% block content %}
 
     <nav class="pt-5 px-4 text-light">
-        <a style="color: #4DB6AC;" class="text-decoration-none lead" href="https://drive.google.com/file/d/15meYgG0jVBBUm5YbNJUL8VEkT7UOJF6v/view?usp=sharing" target="_blank">Resume</a>
-        <span> - </span>
-        <a style="color: #4DB6AC;" class="text-decoration-none lead" href="{% url 'blog' %}">Blog</a>
+        <a style="color: #4DB6AC;" class="text-decoration-none lead mx-3" href="https://drive.google.com/file/d/15meYgG0jVBBUm5YbNJUL8VEkT7UOJF6v/view?usp=sharing" target="_blank">
+            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-file-text" viewBox="0 0 16 16">
+            <path d="M5 4a.5.5 0 0 0 0 1h6a.5.5 0 0 0 0-1zm-.5 2.5A.5.5 0 0 1 5 6h6a.5.5 0 0 1 0 1H5a.5.5 0 0 1-.5-.5M5 8a.5.5 0 0 0 0 1h6a.5.5 0 0 0 0-1zm0 2a.5.5 0 0 0 0 1h3a.5.5 0 0 0 0-1z"/>
+            <path d="M2 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2zm10-1H4a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1"/>
+            </svg>
+        </a>
+        {% comment %} <span> - </span> {% endcomment %}
+        <a style="color: #4DB6AC;" class="text-decoration-none lead" href="{% url 'blog' %}">
+            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-book-half" viewBox="0 0 16 16">
+            <path d="M8.5 2.687c.654-.689 1.782-.886 3.112-.752 1.234.124 2.503.523 3.388.893v9.923c-.918-.35-2.107-.692-3.287-.81-1.094-.111-2.278-.039-3.213.492zM8 1.783C7.015.936 5.587.81 4.287.94c-1.514.153-3.042.672-3.994 1.105A.5.5 0 0 0 0 2.5v11a.5.5 0 0 0 .707.455c.882-.4 2.303-.881 3.68-1.02 1.409-.142 2.59.087 3.223.877a.5.5 0 0 0 .78 0c.633-.79 1.814-1.019 3.222-.877 1.378.139 2.8.62 3.681 1.02A.5.5 0 0 0 16 13.5v-11a.5.5 0 0 0-.293-.455c-.952-.433-2.48-.952-3.994-1.105C10.413.809 8.985.936 8 1.783"/>
+            </svg>
+        </a>
     </nav>
     <!-- <hr class="text-light w-25"> -->
 
@@ -30,87 +39,17 @@
             {% comment %} <img class="p-5 img-fluid" src="{% static 'pics/undraw_programming_re_kg9v.svg' %}" alt="Responsive image" width="370" height="250"> {% endcomment %}
         </div>
 
-        <div class="app">
-            <div class="tag-list">
-              <div class="loop-slider" style="--duration:15951ms; --direction:normal;">
-                <div class="inner">
-                  <div class="tag"><span>#</span> Python</div>
-                  <div class="tag"><span>#</span> Kafka</div>
-                  <div class="tag"><span>#</span> Docker</div>
-                  <div class="tag"><span>#</span> Minio</div>
-                  <div class="tag"><span>#</span> Flask
+        <div class="parent p-4">
+            <div class="wrapper">
+                <div class="outer">
+                    <div class="inner">
+                        <div class="line"></div>
+                        <div class="linetwo"></div>
+                        <div class="linethree"></div>
+                    </div>
                 </div>
-                  <!-- duplicated content -->
-                  <div class="tag"><span>#</span> Python</div>
-                  <div class="tag"><span>#</span> Kafka</div>
-                  <div class="tag"><span>#</span> Docker</div>
-                  <div class="tag"><span>#</span> Minio</div>
-                  <div class="tag"><span>#</span> Flask</div>
-                </div>
-              </div>
-              <div class="loop-slider" style="--duration:19260ms; --direction:reverse;">
-                <div class="inner">
-                  <div class="tag"><span>#</span> Celery</div>
-                  <div class="tag"><span>#</span> Postgresql</div>
-                  <div class="tag"><span>#</span> Django</div>
-                  <div class="tag"><span>#</span> Mongodb</div>
-                  <div class="tag"><span>#</span> Redis</div>
-                  <!-- duplicated content -->
-                  <div class="tag"><span>#</span> Celery</div>
-                  <div class="tag"><span>#</span> Postgresql</div>
-                  <div class="tag"><span>#</span> Django</div>
-                  <div class="tag"><span>#</span> Mongodb</div>
-                  <div class="tag"><span>#</span> Redis</div>
-                </div>
-              </div>
-              <div class="loop-slider" style="--duration:10449ms; --direction:normal;">
-                <div class="inner">
-                  <div class="tag"><span>#</span> Elastic</div>
-                  <div class="tag"><span>#</span> Fastapi</div>
-                  <div class="tag"><span>#</span> Golang</div>
-                  <div class="tag"><span>#</span> Rabbitmq</div>
-                  <div class="tag"><span>#</span> Neo4j</div>
-                  <!-- duplicated content -->
-                  <div class="tag"><span>#</span> Elastic</div>
-                  <div class="tag"><span>#</span> Fastapi</div>
-                  <div class="tag"><span>#</span> Golang</div>
-                  <div class="tag"><span>#</span> Rabbitmq</div>
-                  <div class="tag"><span>#</span> Neo4j</div>
-                </div>
-              </div>
-              {% comment %} <div class="loop-slider" style="--duration:16638ms; --direction:reverse;">
-                <div class="inner">
-                  <div class="tag"><span>#</span> Gatsby</div>
-                  <div class="tag"><span>#</span> HTML</div>
-                  <div class="tag"><span>#</span> CSS</div>
-                  <div class="tag"><span>#</span> React</div>
-                  <div class="tag"><span>#</span> Next.js</div>
-                  <!-- duplicated content -->
-                  <div class="tag"><span>#</span> Gatsby</div>
-                  <div class="tag"><span>#</span> HTML</div>
-                  <div class="tag"><span>#</span> CSS</div>
-                  <div class="tag"><span>#</span> React</div>
-                  <div class="tag"><span>#</span> Next.js</div>
-                </div>
-              </div>
-              <div class="loop-slider" style="--duration:15936ms; --direction:normal;">
-                <div class="inner">
-                  <div class="tag"><span>#</span> Next.js</div>
-                  <div class="tag"><span>#</span> React</div>
-                  <div class="tag"><span>#</span> webdev</div>
-                  <div class="tag"><span>#</span> Typescript</div>
-                  <div class="tag"><span>#</span> Gatsby</div>
-                  <!-- duplicated content -->
-                  <div class="tag"><span>#</span> Next.js</div>
-                  <div class="tag"><span>#</span> React</div>
-                  <div class="tag"><span>#</span> webdev</div>
-                  <div class="tag"><span>#</span> Typescript</div>
-                  <div class="tag"><span>#</span> Gatsby</div>
-                </div>
-              </div> {% endcomment %}
-              <div class="fade"></div>
             </div>
-          </div>
+        </div>
     </div>
 {% endblock %}
 
