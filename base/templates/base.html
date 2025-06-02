@@ -106,6 +106,59 @@
           transform: rotate(-360deg);
         }
       }
+
+      @media screen and (max-width: 768px) {
+      .parent {
+          min-height: 20vh; /* Slightly smaller height for mobile */
+      }
+
+      .wrapper {
+          width: 120px; /* Reduced size */
+          height: 120px;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+      }
+
+      .outer {
+          width: 120px;
+          height: 120px;
+          border-radius: 120px; /* Match new size */
+          background: linear-gradient(to top left, #E62065, #E62065, #4DB6AC, #4DB6AC);
+          animation: clockwise 3s linear infinite;
+      }
+
+      .inner {
+          width: 110px; /* Slightly smaller than outer */
+          height: 110px;
+          margin: 5px;
+          border-radius: 110px;
+      }
+
+      .line {
+          width: 3px; /* Thinner line for smaller scale */
+          height: 50px; /* Reduced proportionally */
+          margin: 28px; /* Adjusted for new size */
+          margin-left: 42px;
+          transform: rotate(20deg);
+      }
+
+      .linetwo {
+          width: 3px;
+          height: 35px;
+          margin: 72px;
+          margin-top: 27px;
+          transform: rotate(-40deg);
+      }
+
+      .linethree {
+          width: 3px;
+          height: 35px;
+          margin: 69px;
+          margin-top: 51px;
+          transform: rotate(50deg);
+      }
+  }
           
     </style>
 </head>
