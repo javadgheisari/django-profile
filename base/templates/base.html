@@ -17,148 +17,112 @@
                 zoom: 80%; /* Adjust the zoom percentage as needed */
             }
         }
-
-      body {
-        font-family: 'Open Sans', sans-serif;
-      }
-
-      .parent {
-          display: block; /* Changed to block */
-          min-height: 23vh; /* Full viewport height */
-          position: relative; /* Create positioning context for absolute children */
-      }
-
-      .wrapper {
-          width: 200px; /* Match .outer size */
-          height: 200px;
-          position: absolute; /* Position absolutely within .parent */
-          top: 50%; /* Move 50% from top */
-          left: 50%; /* Move 50% from left */
-          transform: translate(-50%, -50%); /* Offset by half its size */
-      }
-
-
-      .outer {
-        width: 200px;
-        height: 200px;
-        border-radius: 200px;
-        background: -webkit-linear-gradient(bottom right, #E62065, #E62065, #4DB6AC, #4DB6AC);
-        background: -moz-linear-gradient(bottom right, #E62065, #E62065, #4DB6AC, #4DB6AC);
-        background: -o-linear-gradient(bottom right, #E62065, #E62065, #4DB6AC, #4DB6AC);
-        background: linear-gradient(to top left, #E62065, #E62065, #4DB6AC, #4DB6AC);
-        animation: clockwise 3s linear infinite;
-      }
-
-      .inner {
-        position: absolute;
-        width: 190px;
-        height: 190px;
-        margin: 5px;
-        border-radius: 200px;
-        background-color: #212529;
-        animation: anticlockwise 3s linear infinite;
-      }
-
-      .line {
-        position: absolute;
-        width: 5px;
-        height: 90px;
-        background-color: #FFF;
-        margin: 47px;
-        margin-left: 70px;
-        -webkit-transform: rotate(20deg);
-            -ms-transform: rotate(20deg);
-                transform: rotate(20deg);
-      }
-
-      .linetwo {
-        position: absolute;
-        width: 5px;
-        height: 60px;
-        background-color: #FFF;
-        margin: 120px;
-        margin-top: 45px;
-        -webkit-transform: rotate(-40deg);
-            -ms-transform: rotate(-40deg);
-                transform: rotate(-40deg);
-      }
-
-      .linethree {
-        position: absolute;
-        width: 5px;
-        height: 60px;
-        background-color: #FFF;
-        margin: 115px;
-        margin-top: 85px;
-        -webkit-transform: rotate(50deg);
-            -ms-transform: rotate(50deg);
-                transform: rotate(50deg);
-      }
-
-      @keyframes clockwise {
-        to {
-          transform: rotate(360deg);
+        .dropdown-toggle:hover {
+            cursor: pointer;
         }
-      }
-
-      @keyframes anticlockwise {
-        to {
-          transform: rotate(-360deg);
-        }
-      }
-
-      @media screen and (max-width: 768px) {
-      .parent {
-          min-height: 20vh; /* Slightly smaller height for mobile */
-      }
-
-      .wrapper {
-          width: 120px; /* Reduced size */
-          height: 120px;
-          top: 50%;
-          left: 50%;
-          transform: translate(-50%, -50%);
-      }
-
-      .outer {
-          width: 120px;
-          height: 120px;
-          border-radius: 120px; /* Match new size */
-          background: linear-gradient(to top left, #E62065, #E62065, #4DB6AC, #4DB6AC);
-          animation: clockwise 3s linear infinite;
-      }
-
-      .inner {
-          width: 110px; /* Slightly smaller than outer */
-          height: 110px;
-          margin: 5px;
-          border-radius: 110px;
-      }
-
-      .line {
-          width: 3px; /* Thinner line for smaller scale */
-          height: 50px; /* Reduced proportionally */
-          margin: 28px; /* Adjusted for new size */
-          margin-left: 42px;
-          transform: rotate(20deg);
-      }
-
-      .linetwo {
-          width: 3px;
-          height: 35px;
-          margin: 72px;
-          margin-top: 27px;
-          transform: rotate(-40deg);
-      }
-
-      .linethree {
-          width: 3px;
-          height: 35px;
-          margin: 69px;
-          margin-top: 51px;
-          transform: rotate(50deg);
-      }
-  }
+        
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background: #1e293b;
+            color: #f8fafc;
+          }
+          
+          .app {
+            min-width: 20vw;
+            min-height: 20vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+          }
+          
+          header { 
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 1rem;
+            text-align: center;
+            
+            h1 {
+              font-weight: 600;
+              font-size: 2rem;
+              margin-bottom: 0.5rem;
+              
+              @media (min-width: 768px) {
+                font-size: 3rem;
+              }
+            }
+            
+            p {
+              color: #94a3b8;
+              margin-bottom: 0.5rem;
+            }
+            
+            a {
+              color: #7393c1;
+            }
+          }
+          
+          .tag-list {
+            width: 30rem;
+            max-width: 90vw;
+            display: flex;
+            flex-shrink: 0;
+            flex-direction: column;
+            gap: 1rem 0;
+            position: relative;
+            padding: 1.5rem 0;
+            overflow: hidden;
+          }
+          
+          .loop-slider {
+            .inner {
+              display: flex;
+              width: fit-content;
+              animation-name: loop;
+              animation-timing-function: linear;
+              animation-iteration-count: infinite;
+              animation-direction: var(--direction);
+              animation-duration: var(--duration);
+            }
+          }
+          
+          .tag {
+            display: flex;
+            align-items: center;
+            gap: 0 0.2rem;
+            color: #e2e8f0;
+            font-size: 0.9rem;
+            background-color: #334155;
+            border-radius: 0.4rem;
+            padding: 0.7rem 1rem;
+            margin-right: 1rem; // Must used margin-right instead of gap for the loop to be smooth
+            box-shadow: 
+              0 0.1rem 0.2rem rgb(0 0 0 / 20%),
+              0 0.1rem 0.5rem rgb(0 0 0 / 30%),
+              0 0.2rem 1.5rem rgb(0 0 0 / 40%);
+            
+            span {
+              font-size: 1.2rem;
+              color: #64748b;
+            }
+          }
+          
+          .fade {
+            pointer-events: none;
+            background: linear-gradient(90deg, #1e293b, transparent 30%, transparent 70%, #1e293b);
+            position: absolute;
+            inset: 0;
+          }
+          
+          @keyframes loop {
+            0% {
+              transform: translateX(0);
+            }
+            100% {
+              transform: translateX(-50%);
+            }
+          }
           
     </style>
 </head>
